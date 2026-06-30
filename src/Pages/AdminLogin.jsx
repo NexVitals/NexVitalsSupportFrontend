@@ -209,7 +209,7 @@ function AuthSignIn({ onForgotPassword, onLoginSuccess }) {
     }))
 
     try {
-      const response = await fetch("http://localhost:8080/api/auth/login", {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/auth/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -362,7 +362,7 @@ function AuthForgotPassword({ onSignIn, onSuccess }) {
     setFormState((prev) => ({ ...prev, isLoading: true, error: null }))
 
     try {
-      const response = await fetch("http://localhost:8080/api/auth/forgot-password", {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/auth/forgot-password`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -512,7 +512,7 @@ function AuthResetPassword({ token, onSignIn, onSuccess }) {
     setFormState((prev) => ({ ...prev, isLoading: true, error: null }))
 
     try {
-      const url = new URL("http://localhost:8080/api/auth/reset-password");
+      const url = new URL(`${import.meta.env.VITE_API_BASE_URL}/api/auth/reset-password`);
       url.searchParams.append("token", token);
 
       const response = await fetch(url.toString(), {

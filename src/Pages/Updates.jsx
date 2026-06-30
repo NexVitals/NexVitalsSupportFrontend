@@ -131,7 +131,7 @@ function Updates() {
 
   const fetchUpdates = async () => {
     try {
-      const response = await fetch('http://localhost:8080/api/updates');
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/updates`);
       const result = await response.json();
 
       const grouped = {

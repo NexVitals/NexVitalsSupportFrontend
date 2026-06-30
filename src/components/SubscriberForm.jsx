@@ -3,7 +3,7 @@ import { Form as FormPrimitive } from "@base-ui/react/form"
 import { AlertCircle, CheckCircle, Loader2 } from "lucide-react"
 import "./SubscriberForm.css" // Make sure this exists
 
-const API_BASE_URL = "http://localhost:8080/api/assistance"
+const API_BASE_URL = `${import.meta.env.VITE_API_BASE_URL}/api/assistance`
 
 export function Form({ className = "", ...props }) {
   const [email, setEmail] = useState("")

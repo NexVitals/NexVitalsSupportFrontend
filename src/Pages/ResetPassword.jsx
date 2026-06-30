@@ -3,7 +3,7 @@ import { useSearchParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./ResetPassword.css";
 
-const API_BASE_URL = "http://localhost:8080/api/auth";
+const API_BASE_URL = `${import.meta.env.VITE_API_BASE_URL}/api/auth`;
 
 function ResetPassword() {
   const [searchParams] = useSearchParams();

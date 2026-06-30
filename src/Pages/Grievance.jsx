@@ -182,7 +182,7 @@ function Grievance() {
   }
 
   const handleSubmitGrievance = async (submittedFormData) => {
-    const response = await fetch('http://localhost:8080/api/grievance/submit', {
+    const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/grievance/submit`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({

@@ -135,7 +135,7 @@ const FileUploadChat = () => {
 
     try {
       // ✅ Call NexBot backend API
-      const response = await fetch("http://localhost:8080/api/query/chat", {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/query/chat`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

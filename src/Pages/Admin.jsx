@@ -557,7 +557,7 @@ function Admin() {
     try {
       const payload = buildUpdatePayload();
 
-      const response = await fetch('http://localhost:8080/api/admin/updates/post', {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/admin/updates/post`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -613,7 +613,7 @@ function Admin() {
       let response;
 
       if (adminFormData.eventType === 'add') {
-        response = await fetch('http://localhost:8080/api/admin/add', {
+        response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/admin/add`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -627,7 +627,7 @@ function Admin() {
       } else {
         const encodedEmail = encodeURIComponent(adminFormData.adminEmail.trim());
         response = await fetch(
-          `http://localhost:8080/api/admin/remove?adminEmailId=${encodedEmail}`,
+          `${import.meta.env.VITE_API_BASE_URL}/api/admin/remove?adminEmailId=${encodedEmail}`,
           {
             method: 'DELETE',
             headers: {

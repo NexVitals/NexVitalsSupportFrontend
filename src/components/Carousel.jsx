@@ -79,7 +79,7 @@ export default function Carousel({
     const fetchReviews = async () => {
       try {
         setLoading(true);
-        const response = await fetch(`http://localhost:8080${apiEndpoint}`);
+        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}${apiEndpoint}`);
         const result = await response.json();
 
         if (result.success && result.data) {

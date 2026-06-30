@@ -1,0 +1,688 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,300;0,400;0,500;0,600;1,200;1,300;1,400&display=swap");
+
+.Grievance,
+.Grievance * {
+  box-sizing: border-box;
+  font-family: "Noto Serif", serif;
+}
+
+.Grievance {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: #0f1117;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  color: #f4f7fb;
+}
+
+.Grievance-background {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+.Grievance-background > * {
+  width: 100%;
+  height: 100%;
+}
+
+.Grievance::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top right, rgba(174, 191, 217, 0.08), transparent 35%),
+    linear-gradient(to bottom, rgba(10, 12, 18, 0.35), rgba(10, 12, 18, 0.75));
+  z-index: 1;
+  pointer-events: none;
+}
+
+.silk-grievance {
+  width: 100%;
+  height: 100%;
+}
+
+.Grievance-Heading {
+  position: relative;
+  z-index: 2;
+  max-width: 1400px;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 1rem 0.4rem;
+  margin-bottom: 3rem;
+}
+
+.heading-text {
+  display: block;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0.4rem 0.8rem;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.6rem, 3vw, 3rem);
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: #f3efe2;
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.Grievance-subheading {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 1rem;
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+
+.quote-text {
+  display: block;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 0.4rem;
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(0.95rem, 1.6vw, 1.35rem);
+  line-height: 1.7;
+  letter-spacing: 0.015em;
+  text-align: center;
+  color: rgba(243, 239, 226, 0.88);
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.quote-wrapper {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.Grievance-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 2rem;
+  color: #ffffff;
+}
+
+.Grievance-content-stack {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.Grievance-types {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.Grievance-types-heading,
+.Grievance-form-heading,
+.Grievance-footer-heading {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.Grievance-title,
+.Grievance-form-title {
+  width: 100%;
+  font-style: italic;
+  font-weight: 400;
+  color: #f4f7fb;
+  font-size: clamp(1.15rem, 2vw, 2rem);
+  line-height: 1.35;
+  text-align: center;
+}
+
+.Grievance-types-content {
+  width: 100%;
+  padding: 0 0.2rem;
+}
+
+.Grievance-type-item {
+  width: 100%;
+  padding: 1.3rem 1.4rem;
+  border: 1px solid rgba(226, 237, 242, 0.16);
+  background: linear-gradient(135deg, rgba(10, 16, 24, 0.58), rgba(22, 31, 44, 0.4));
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.14);
+}
+
+.Grievance-type-item-intro {
+  background: linear-gradient(135deg, rgba(16, 24, 34, 0.62), rgba(24, 34, 48, 0.42));
+}
+
+.Grievance-type-text {
+  margin: 0;
+  font-size: clamp(0.98rem, 1.3vw, 1.08rem);
+  line-height: 1.95;
+  color: rgba(243, 239, 226, 0.92);
+  text-align: left;
+}
+
+.Grievance-type-text + .Grievance-type-text {
+  margin-top: 0.85rem;
+}
+
+.Grievance-type-text-intro {
+  text-align: left;
+  font-size: clamp(1rem, 1.45vw, 1.12rem);
+  color: #f8f4e9;
+}
+
+.Grievance-type-text p {
+  margin: 0 0 0.85rem;
+}
+
+.Grievance-type-text p:last-child {
+  margin-bottom: 0;
+}
+
+.Grievance-from {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.Grievance-form-panel {
+  width: 100%;
+  max-width: 1100px;
+  margin: 1.4rem auto 0;
+  padding: 1.4rem;
+  border: 1px solid rgba(226, 237, 242, 0.18);
+  border-radius: 24px;
+  background: linear-gradient(135deg, rgba(10, 16, 24, 0.58), rgba(22, 31, 44, 0.42));
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.2);
+}
+
+.Grievance-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.Grievance-form-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.Grievance-label {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: #edf4f8;
+  letter-spacing: 0.01em;
+}
+
+.Grievance-input {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border-radius: 16px;
+  border: 1px solid rgba(214, 226, 232, 0.22);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04));
+  color: #f7fbfd;
+  outline: none;
+  font-size: 0.98rem;
+  font-weight: 400;
+  line-height: 1.5;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.Grievance-input::placeholder,
+.Grievance-textarea::placeholder {
+  color: rgba(228, 236, 240, 0.52);
+  font-style: normal;
+}
+
+.Grievance-input:focus {
+  border-color: rgba(178, 218, 228, 0.85);
+  box-shadow: 0 0 0 3px rgba(178, 218, 228, 0.16);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.06));
+}
+
+.Grievance-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  padding-right: 3.25rem;
+  background-image:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04)),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23dce8ee' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat, no-repeat;
+  background-position: 0 0, right 1rem center;
+  background-size: 100% 100%, 16px 16px;
+}
+
+.Grievance-select::-ms-expand {
+  display: none;
+}
+
+.Grievance-select option {
+  color: #edf4f8;
+  background: #18212b;
+  font-family: "Noto Serif", serif;
+}
+
+.Grievance-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.Grievance-file {
+  padding: 0.8rem 1rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04));
+}
+
+.Grievance-file::file-selector-button {
+  margin-right: 0.9rem;
+  padding: 0.65rem 1rem;
+  border: 1px solid rgba(214, 226, 232, 0.22);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #eef5f9;
+  cursor: pointer;
+  font-family: "Noto Serif", serif;
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+.Grievance-file::file-selector-button:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(178, 218, 228, 0.55);
+}
+
+.Grievance-helper {
+  font-size: 0.87rem;
+  color: rgba(232, 238, 241, 0.72);
+  line-height: 1.5;
+}
+
+.Grievance-error {
+  font-size: 0.88rem;
+  color: #ff9ea8;
+  line-height: 1.4;
+}
+
+.input-error {
+  border-color: rgba(255, 138, 154, 0.95) !important;
+  box-shadow: 0 0 0 3px rgba(255, 138, 154, 0.14);
+}
+
+.Grievance-form-actions {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.4rem;
+}
+
+.Grievance-submit-btn {
+  min-width: 220px;
+  padding: 0.95rem 1.5rem;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #b2dae4 0%, #8dc7d5 100%);
+  color: #10202a;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  font-family: "Noto Serif", serif;
+  transition: transform 0.24s ease, box-shadow 0.24s ease, filter 0.24s ease;
+  box-shadow: 0 12px 24px rgba(124, 177, 192, 0.22);
+}
+
+.Grievance-submit-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.03);
+  box-shadow: 0 16px 30px rgba(124, 177, 192, 0.28);
+}
+
+.Grievance-submit-btn:active {
+  transform: translateY(0);
+}
+
+.Grievance-success {
+  margin-top: 0.4rem;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #bff4c8;
+  line-height: 1.5;
+}
+
+.Grievance-form-end {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 1.4rem auto 0;
+  padding: 0.4rem 0.8rem;
+}
+
+.Grievance-form-end-text {
+  width: 100%;
+  max-width: 980px;
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(1rem, 1.5vw, 1.35rem);
+  line-height: 1.45;
+  letter-spacing: 0.02em;
+  color: #f4f7fb;
+  text-align: center;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+
+.Grievance-footer {
+  width: 100%;
+  margin-top: 1.8rem;
+}
+
+.Grievance-footer-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.2rem;
+  align-items: stretch;
+}
+
+.Grievance-footer-card {
+  width: 100%;
+  padding: 1.15rem 1.2rem;
+  border: 1px solid rgba(226, 237, 242, 0.16);
+  background: linear-gradient(135deg, rgba(10, 16, 24, 0.58), rgba(22, 31, 44, 0.4));
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.14);
+}
+
+.Grievance-footer-card-main {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, rgba(16, 24, 34, 0.62), rgba(24, 34, 48, 0.42));
+}
+
+.Grievance-footer-card-wide {
+  grid-column: 1 / -1;
+}
+
+.Grievance-footer-content-text {
+  margin: 0;
+  font-size: clamp(0.96rem, 1.15vw, 1.05rem);
+  line-height: 1.8;
+  color: rgba(243, 239, 226, 0.92);
+  text-align: left;
+}
+
+.Grievance-footer-content-text + .Grievance-footer-content-text {
+  margin-top: 0.8rem;
+}
+
+.Grievance-footer-content-text-intro {
+  font-size: clamp(1rem, 1.28vw, 1.1rem);
+  color: #f8f4e9;
+}
+
+.Grievance-footer-content-text p {
+  margin: 0 0 0.8rem;
+}
+
+.Grievance-footer-content-text p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .Grievance-Heading {
+    min-height: 90px;
+    padding: 1.4rem 0.9rem 0.3rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .heading-text {
+    font-size: clamp(1.15rem, 5vw, 2rem);
+    line-height: 1.3;
+    letter-spacing: 0.01em;
+    padding: 0.3rem 0.5rem;
+  }
+
+  .Grievance-subheading {
+    padding: 0 0.9rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .quote-text {
+    font-size: clamp(0.9rem, 3.4vw, 1.1rem);
+    line-height: 1.6;
+    padding: 0 0.2rem;
+  }
+
+  .Grievance-content {
+    padding: 1.2rem;
+  }
+
+  .Grievance-types {
+    gap: 1.4rem;
+  }
+
+  .Grievance-type-item {
+    padding: 1rem;
+    border-radius: 18px;
+  }
+
+  .Grievance-form-panel {
+    padding: 1.4rem;
+    border-radius: 20px;
+  }
+
+  .Grievance-submit-btn {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .Grievance-form-end {
+    margin-top: 1.1rem;
+    padding: 0.3rem 0.5rem;
+  }
+
+  .Grievance-form-end-text {
+    font-size: clamp(0.95rem, 2.2vw, 1.15rem);
+  }
+
+  .Grievance-footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .Grievance-footer-card-main,
+  .Grievance-footer-card-wide {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 480px) {
+  .Grievance-Heading {
+    min-height: 80px;
+    padding: 1.2rem 0.75rem 0.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .heading-text {
+    font-size: clamp(1rem, 6vw, 1.55rem);
+    padding: 0.2rem 0.35rem;
+  }
+
+  .Grievance-subheading {
+    padding: 0 0.75rem;
+    margin-bottom: 1.1rem;
+  }
+
+  .quote-text {
+    font-size: clamp(0.85rem, 4vw, 1rem);
+    line-height: 1.55;
+  }
+
+  .Grievance-content {
+    padding: 1rem 0.85rem 1.4rem;
+  }
+
+  .Grievance-title,
+  .Grievance-form-title {
+    font-size: clamp(1rem, 5vw, 1.4rem);
+  }
+
+  .Grievance-type-text,
+  .Grievance-type-text-intro {
+    font-size: 0.94rem;
+    line-height: 1.75;
+  }
+
+  .Grievance-form-panel {
+    padding: 1rem;
+    border-radius: 18px;
+  }
+
+  .Grievance-input {
+    padding: 0.9rem 0.9rem;
+    font-size: 0.95rem;
+    border-radius: 12px;
+  }
+
+  .Grievance-select {
+    padding-right: 2.8rem;
+    background-position: 0 0, right 0.85rem center;
+  }
+
+  .Grievance-textarea {
+    min-height: 130px;
+  }
+
+  .Grievance-submit-btn {
+    min-width: 100%;
+    padding: 0.9rem 1.2rem;
+    font-size: 0.96rem;
+  }
+
+  .Grievance-form-end {
+    margin-top: 0.9rem;
+    padding: 0.2rem 0.35rem;
+  }
+
+  .Grievance-form-end-text {
+    font-size: clamp(0.9rem, 3.8vw, 1rem);
+    line-height: 1.45;
+  }
+
+  .Grievance-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+
+  .Grievance-footer-card,
+  .Grievance-footer-card-main,
+  .Grievance-footer-card-wide {
+    grid-column: auto;
+    border-radius: 18px;
+    padding: 1rem;
+  }
+
+  .Grievance-footer-content-text,
+  .Grievance-footer-content-text-intro {
+    font-size: 0.94rem;
+    line-height: 1.72;
+  }
+}
+.Grievance-footer-quote {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 900px;
+  margin: 2rem auto 0;
+  padding: 1rem 1.25rem 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.Grievance-footer-quote .Grievance-form-title {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  font-family: "Noto Serif", serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.05rem, 2vw, 1.75rem);
+  line-height: 1.45;
+  letter-spacing: 0.02em;
+  color: rgba(243, 239, 226, 0.92);
+  text-align: center;
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+@media (max-width: 768px) {
+  .Grievance-footer-quote {
+    margin-top: 1.5rem;
+    padding: 0.85rem 1rem 0.35rem;
+  }
+
+  .Grievance-footer-quote .Grievance-form-title {
+    font-size: clamp(0.95rem, 3.8vw, 1.35rem);
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 480px) {
+  .Grievance-footer-quote {
+    margin-top: 1.2rem;
+    padding: 0.7rem 0.8rem 0.25rem;
+  }
+
+  .Grievance-footer-quote .Grievance-form-title {
+    font-size: clamp(0.9rem, 4.5vw, 1.15rem);
+    line-height: 1.35;
+  }
+}

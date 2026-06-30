@@ -1,0 +1,218 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@1,200;1,300;1,400;1,500&display=swap");
+
+.contact-us {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  background: #000000;
+  font-family: "Noto Serif", serif;
+}
+
+.ContactUs-background {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: transparent;
+  z-index: 0;
+}
+
+.contactus-rays-wrapper {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.custom-rays {
+  position: absolute !important;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+  z-index: 0;
+  pointer-events: auto;
+  clip-path: inset(0 0 0 0);
+}
+
+.contactUs-section {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 4.5rem;
+  padding-bottom: 4rem;
+}
+
+.ContactUs-content {
+  position: relative;
+  width: 100%;
+  z-index: 2;
+}
+
+.ContactUs-content--heading {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 3rem;
+}
+
+.ContactUs-heading {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-inline: 1rem;
+}
+
+.split-text-sub {
+  color: #ffffff;
+  font-family: "Noto Serif", serif;
+  font-size: 1.25rem !important;
+  font-style: italic;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  line-height: 1.3;
+  text-align: center !important;
+  text-transform: none !important;
+  white-space: normal;
+  margin: 0 auto;
+  display: inline-block;
+  text-shadow: 0 0 18px rgba(255, 255, 255, 0.08);
+}
+
+.ContactUs-body {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto 4rem;
+  padding-inline: 1.5rem;
+}
+
+.contactus-grid-wrap {
+  width: 100%;
+  min-height: 600px;
+  position: relative;
+}
+
+.ContactUs-footer {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-inline: 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.ContactUs-footer-heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.contactus-footer-body {
+  position: relative;
+  width: 100%;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  overflow: hidden;
+}
+
+.contactus-footer-body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.02) 45%,
+    rgba(59, 130, 246, 0.05) 100%
+  );
+  pointer-events: none;
+}
+
+.contactus-footer-line {
+  position: relative;
+  z-index: 1;
+}
+
+.contactus-footer-line + .contactus-footer-line {
+  margin-top: 1.5rem;
+}
+
+.contactus-footer-paragraph {
+  color: rgba(255, 255, 255, 0.92);
+  font-family: "Noto Serif", serif;
+  font-size: clamp(1rem, 1.2vw, 1.18rem);
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.9;
+  letter-spacing: 0.015em;
+  text-align: center !important;
+  text-transform: none !important;
+  margin: 0 auto;
+  max-width: 900px;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
+}
+
+.split-text-sub *,
+.contactus-footer-paragraph *,
+.ContactUs-heading *,
+.ContactUs-content *,
+.ContactUs-footer * {
+  text-transform: none !important;
+  text-align: center !important;
+}
+
+@media (max-width: 768px) {
+  .contactUs-section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .ContactUs-content--heading {
+    margin-bottom: 2rem;
+  }
+
+  .ContactUs-body,
+  .ContactUs-footer {
+    padding-inline: 1rem;
+  }
+
+  .split-text-sub {
+    font-size: clamp(1.25rem, 5vw, 1.7rem);
+    letter-spacing: 0.05em;
+    line-height: 1.4;
+  }
+
+  .contactus-grid-wrap {
+    min-height: 520px;
+  }
+
+  .contactus-footer-body {
+    border-radius: 20px;
+    padding: 1.25rem;
+  }
+
+  .contactus-footer-line + .contactus-footer-line {
+    margin-top: 1rem;
+  }
+
+  .contactus-footer-paragraph {
+    font-size: 0.98rem;
+    line-height: 1.8;
+  }
+}

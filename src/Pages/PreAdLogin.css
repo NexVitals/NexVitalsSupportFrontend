@@ -1,0 +1,153 @@
+/* PreAdLogin.css */
+
+.preadlogin-content {
+  position: relative;
+  width: 100%;
+  min-height: 100dvh;
+  overflow: hidden;
+  background: #000;
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+}
+
+.background-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: auto;
+}
+
+.background-layer > * {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.background-layer canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+.preadlogin-overlay {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  padding: 32px 20px;
+}
+
+.preadlogin-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min(92vw, 980px);
+  text-align: center;
+  pointer-events: none;
+}
+
+.split-text-sub {
+  color: #ffffff;
+  font-size: clamp(0.95rem, 1.2vw, 1.25rem);
+  font-weight: 500;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  line-height: 1.4;
+  text-align: center;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.18);
+}
+
+.preadlogin-subheading {
+  width: min(94vw, 1200px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-inline: 0.5rem;
+  pointer-events: none;
+}
+
+.subheading-text {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: clamp(0.98rem, 0.95rem + 0.45vw, 1.2rem);
+  font-weight: 400;
+  line-height: 1.75;
+  letter-spacing: 0.015em;
+  max-width: 1100px;
+  text-align: center;
+  text-wrap: balance;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.35);
+}
+
+.preadlogin-login-form {
+  width: 100%;
+  max-width: 460px;
+  margin-top: 0.5rem;
+  pointer-events: auto;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+}
+
+.preadlogin-login-form > * {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .preadlogin-overlay {
+    padding: 24px 16px;
+    gap: 0.7rem;
+  }
+
+  .split-text-sub {
+    font-size: 0.9rem;
+    letter-spacing: 0.24em;
+  }
+
+  .preadlogin-subheading {
+    width: min(96vw, 42rem);
+  }
+
+  .subheading-text {
+    font-size: clamp(0.92rem, 0.88rem + 0.55vw, 1.02rem);
+    line-height: 1.65;
+    max-width: 34rem;
+  }
+
+  .preadlogin-login-form {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .preadlogin-overlay {
+    padding: 18px 14px;
+    gap: 0.6rem;
+  }
+
+  .split-text-sub {
+    font-size: 0.82rem;
+    letter-spacing: 0.16em;
+    line-height: 1.5;
+  }
+
+  .subheading-text {
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+
+  .preadlogin-login-form {
+    margin-top: 0.35rem;
+  }
+}

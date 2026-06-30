@@ -1,0 +1,153 @@
+.subscriber-form {
+  width: 100%;
+  max-width: 800px;
+}
+
+.subscriber-form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.subscriber-input-wrapper {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.subscriber-input {
+  flex: 1;
+  min-width: 280px;
+  padding: 0.875rem 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.subscriber-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.subscriber-input:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+}
+
+.subscriber-input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.subscriber-button {
+  padding: 0.875rem 2rem;
+  background: linear-gradient(135deg, #c9a961 0%, #d4b896 100%);
+  border: none;
+  border-radius: 8px;
+  color: #1a1a1a;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  font-family: inherit;
+}
+
+.subscriber-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(201, 169, 97, 0.3);
+  background: linear-gradient(135deg, #d4b896 0%, #e0c4a8 100%);
+}
+
+.subscriber-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.subscriber-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.subscriber-icon-spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.subscriber-message {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.subscriber-message-success {
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  color: #86efac;
+}
+
+.subscriber-message-success .subscriber-message-icon {
+  color: #22c55e;
+}
+
+.subscriber-message-error {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #fca5a5;
+}
+
+.subscriber-message-error .subscriber-message-icon {
+  color: #ef4444;
+}
+
+.subscriber-message-icon {
+  flex-shrink: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .subscriber-input-wrapper {
+    flex-direction: column;
+  }
+
+  .subscriber-input {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .subscriber-button {
+    width: 100%;
+  }
+}

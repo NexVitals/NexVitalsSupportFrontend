@@ -1,0 +1,67 @@
+.threads-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 100vh;
+  min-width: 100vw;
+  min-height: 100vh;
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
+  overflow: clip;
+  pointer-events: none;
+  z-index: 0;
+  display: block;
+  background: transparent;
+  backface-visibility: hidden;
+  contain: layout paint size style;
+}
+
+.threads-container > * {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  min-width: 100vw !important;
+  min-height: 100vh !important;
+  max-width: none !important;
+  max-height: none !important;
+  transform: translate(-50%, -50%) !important;
+  transform-origin: center center !important;
+  display: block !important;
+}
+
+.threads-container canvas,
+.threads-container svg {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  min-width: 100vw !important;
+  min-height: 100vh !important;
+  max-width: none !important;
+  max-height: none !important;
+  transform: translate(-50%, -50%) !important;
+  transform-origin: center center !important;
+  display: block !important;
+}
+
+@supports not (overflow: clip) {
+  .threads-container {
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 768px) {
+  .threads-container,
+  .threads-container > *,
+  .threads-container canvas,
+  .threads-container svg {
+    width: 100vw !important;
+    height: 100vh !important;
+    min-width: 100vw !important;
+    min-height: 100vh !important;
+  }
+}

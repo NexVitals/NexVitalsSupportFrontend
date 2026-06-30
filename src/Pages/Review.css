@@ -1,0 +1,854 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@1,200;1,300;1,400&display=swap");
+
+.Review {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background: #0f1117;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.Review-background {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+.Review-background > * {
+  width: 100%;
+  height: 100%;
+}
+
+.Review::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top right, rgba(174, 191, 217, 0.08), transparent 35%),
+    linear-gradient(to bottom, rgba(10, 12, 18, 0.35), rgba(10, 12, 18, 0.75));
+  z-index: 1;
+  pointer-events: none;
+}
+
+.silk-review {
+  width: 100%;
+  height: 100%;
+}
+
+.Review-Heading {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 1rem 0.4rem;
+  margin-bottom: 3rem;
+  box-sizing: border-box;
+}
+
+.heading-text {
+  display: block;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0.4rem 0.8rem;
+  font-family: "Noto Serif", serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.6rem, 3vw, 3rem);
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: #f3efe2;
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  box-sizing: border-box;
+}
+
+.Review-subheading {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 1rem;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  box-sizing: border-box;
+}
+
+.quote-text {
+  display: block;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 0.4rem;
+  font-family: "Noto Serif", serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(0.95rem, 1.6vw, 1.35rem);
+  line-height: 1.7;
+  letter-spacing: 0.015em;
+  text-align: center;
+  color: rgba(243, 239, 226, 0.88);
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  box-sizing: border-box;
+}
+
+.Review-Content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 2rem 1.5rem 3rem;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.Review-Content-stack {
+  width: 100%;
+  max-width: 1400px;
+}
+
+.Review-types {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.Review-types-heading {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 1.8rem;
+}
+
+.Review-title {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: "Noto Serif", serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.3rem, 2.2vw, 2.2rem);
+  line-height: 1.3;
+  letter-spacing: 0.02em;
+  color: #f3efe2;
+  text-align: center;
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.Review-types-content {
+  width: 100%;
+  max-width: 1100px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  align-items: stretch;
+  margin-bottom: 2rem;
+}
+
+.Review-type-item {
+  width: 100%;
+  min-height: 120px;
+  padding: 0.95rem 1rem;
+  border: 1px solid rgba(243, 239, 226, 0.12);
+  background: rgba(255, 255, 255, 0.035);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 14px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.Review-type-item-intro {
+  grid-column: 1 / -1;
+  min-height: auto;
+  padding: 1.2rem 1.5rem;
+  border-radius: 18px;
+  text-align: center;
+  justify-content: center;
+}
+
+.Review-type-text {
+  display: block;
+  width: 100%;
+  margin: 0;
+  font-family: "Noto Serif", serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(0.92rem, 1.15vw, 1.02rem);
+  line-height: 1.55;
+  letter-spacing: 0.01em;
+  color: rgba(243, 239, 226, 0.92);
+  text-align: left;
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.Review-type-text-intro {
+  max-width: 100%;
+  text-align: center;
+  font-size: clamp(1.02rem, 1.6vw, 1.26rem);
+  line-height: 1.8;
+  color: #f3efe2;
+}
+
+.Review-form {
+  width: 100%;
+  max-width: 1100px;
+  padding: 1.6rem;
+  border: 1px solid rgba(243, 239, 226, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-sizing: border-box;
+  margin-bottom: 2rem;
+}
+
+.Review-form-heading {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.Review-form-title {
+  display: block;
+  width: 100%;
+  font-family: "Noto Serif", serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.15rem, 2vw, 2rem);
+  line-height: 1.3;
+  letter-spacing: 0.02em;
+  color: #f3efe2;
+  text-align: center;
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.Review-form-element {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.Review-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.Review-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  position: relative;
+}
+
+.Review-label {
+  font-family: "Noto Serif", serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #f3efe2;
+  letter-spacing: 0.01em;
+}
+
+.Review-input,
+.Review-textarea {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: 1px solid rgba(243, 239, 226, 0.18);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #f7f3e9;
+  font-size: 0.98rem;
+  line-height: 1.5;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.Review-input::placeholder,
+.Review-textarea::placeholder {
+  color: rgba(243, 239, 226, 0.5);
+}
+
+.Review-input:focus,
+.Review-textarea:focus {
+  border-color: rgba(103, 185, 196, 0.8);
+  box-shadow: 0 0 0 3px rgba(76, 132, 141, 0.18);
+  background: rgba(20, 28, 42, 0.65);
+}
+
+.Review-textarea {
+  min-height: 160px;
+  resize: vertical;
+}
+
+.Review-radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  justify-content: center;
+}
+
+.Review-radio-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.8rem 1rem;
+  border: 1px solid rgba(243, 239, 226, 0.14);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.035);
+  color: #f3efe2;
+  cursor: pointer;
+  transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+}
+
+.Review-radio-option:hover {
+  border-color: rgba(103, 185, 196, 0.45);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.Review-radio-option input[type="radio"] {
+  accent-color: #6ab6c0;
+  cursor: pointer;
+}
+
+.Review-radio-option span {
+  font-size: 0.96rem;
+  line-height: 1.4;
+}
+
+.Review-hidden-input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  width: 1px;
+  height: 1px;
+}
+
+.Review-custom-select {
+  position: relative;
+  width: 100%;
+  z-index: 10;
+}
+
+.Review-custom-select-trigger {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: 1px solid rgba(103, 185, 196, 0.25);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  color: #f7f3e9;
+  font-size: 0.98rem;
+  line-height: 1.5;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.Review-custom-select-trigger:focus,
+.Review-custom-select-trigger.open {
+  border-color: rgba(103, 185, 196, 0.8);
+  box-shadow: 0 0 0 3px rgba(76, 132, 141, 0.18);
+  outline: none;
+  background: rgba(20, 28, 42, 0.65);
+}
+
+.Review-custom-select-trigger .placeholder {
+  color: rgba(243, 239, 226, 0.5);
+}
+
+.Review-custom-select-arrow {
+  width: 12px;
+  height: 12px;
+  border-right: 2px solid rgba(243, 239, 226, 0.6);
+  border-bottom: 2px solid rgba(243, 239, 226, 0.6);
+  transform: rotate(45deg) translateY(-2px);
+  transition: transform 0.25s ease;
+  flex-shrink: 0;
+  margin-left: 0.75rem;
+}
+
+.Review-custom-select-trigger.open .Review-custom-select-arrow {
+  transform: rotate(-135deg) translateY(-1px);
+}
+
+.Review-custom-select-options {
+  background: rgba(15, 22, 32, 0.72);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(103, 185, 196, 0.22);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+}
+
+.Review-custom-select-option {
+  padding: 0.85rem 1rem;
+  color: rgba(243, 239, 226, 0.88);
+  font-size: 0.97rem;
+  cursor: pointer;
+  transition: background 0.18s ease, color 0.18s ease;
+  text-align: center;
+}
+
+.Review-custom-select-option:hover {
+  background: rgba(76, 132, 141, 0.3);
+  color: #ffffff;
+}
+
+.Review-custom-select-option.selected {
+  background: rgba(76, 132, 141, 0.45);
+  color: #ffffff;
+}
+
+.Review-message {
+  padding: 0.95rem 1rem;
+  border-radius: 14px;
+  font-size: 0.96rem;
+  line-height: 1.55;
+  border: 1px solid transparent;
+}
+
+.Review-message-success {
+  color: #d7f7df;
+  background: rgba(55, 130, 78, 0.18);
+  border-color: rgba(106, 201, 131, 0.35);
+}
+
+.Review-message-error {
+  color: #ffd7d7;
+  background: rgba(150, 49, 49, 0.18);
+  border-color: rgba(224, 112, 112, 0.32);
+}
+
+.Review-submit-wrap {
+  display: flex;
+  justify-content: center;
+  padding-top: 0.25rem;
+}
+
+.Review-submit-button {
+  min-width: 180px;
+  padding: 0.95rem 1.4rem;
+  border: 1px solid rgba(103, 185, 196, 0.5);
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(76, 132, 141, 0.95), rgba(59, 108, 116, 0.95));
+  color: #f8f5ed;
+  font-family: "Noto Serif", serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+}
+
+.Review-submit-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(32, 63, 68, 0.28);
+  filter: brightness(1.04);
+}
+
+.Review-submit-button:active {
+  transform: translateY(0);
+}
+
+.Review-form-note,
+.Review-close-quote {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.Review-footer,
+.Review-end {
+  width: 100%;
+  max-width: 1100px;
+  margin-top: 2rem;
+}
+
+.Review-footer-heading,
+.Review-end-heading {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1.4rem;
+}
+
+.Review-footer-title,
+.Review-end-title {
+  display: block;
+  width: 100%;
+  font-family: "Noto Serif", serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.15rem, 2vw, 2rem);
+  line-height: 1.3;
+  letter-spacing: 0.02em;
+  color: #f3efe2;
+  text-align: center;
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.Review-footer-content {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 1.5rem;
+  text-align: center;
+}
+
+.Review-footer-content > * {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.Review-footer-note,
+.Review-end-content {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.35rem 1.4rem;
+  border: 1px solid rgba(243, 239, 226, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.Review-end-note {
+  width: 100%;
+  max-width: 1100px;
+  margin: 1.25rem auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.review-paragraph-row {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.review-paragraph,
+.review-note,
+.review-close-quote {
+  width: 100%;
+  max-width: 1060px;
+  font-family: "Noto Serif", serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(0.98rem, 1.45vw, 1.18rem);
+  line-height: 1.85;
+  letter-spacing: 0.012em;
+  text-align: center;
+  color: rgba(243, 239, 226, 0.86);
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.review-note {
+  color: rgba(243, 239, 226, 0.92);
+}
+
+.review-close-quote {
+  margin-top: 2rem;
+  font-size: clamp(1.05rem, 1.8vw, 1.4rem);
+  color: #f3efe2;
+}
+
+.quote-wrapper {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .Review-Heading {
+    min-height: 90px;
+    padding: 1.4rem 0.9rem 0.3rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .heading-text {
+    font-size: clamp(1.15rem, 5vw, 2rem);
+    line-height: 1.3;
+    letter-spacing: 0.01em;
+    padding: 0.3rem 0.5rem;
+  }
+
+  .Review-subheading {
+    padding: 0 0.9rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .quote-text {
+    font-size: clamp(0.9rem, 3.4vw, 1.1rem);
+    line-height: 1.6;
+    padding: 0 0.2rem;
+  }
+
+  .Review-Content {
+    padding: 1.2rem 1rem 2.5rem;
+  }
+
+  .Review-title {
+    font-size: clamp(1.1rem, 4.2vw, 1.8rem);
+    line-height: 1.35;
+  }
+
+  .Review-types-heading {
+    margin-bottom: 1.4rem;
+  }
+
+  .Review-types-content {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .Review-type-item {
+    min-height: 110px;
+    padding: 0.9rem;
+    border-radius: 12px;
+  }
+
+  .Review-type-item-intro {
+    padding: 1rem 1.1rem;
+    border-radius: 16px;
+  }
+
+  .Review-type-text {
+    font-size: clamp(0.9rem, 2.4vw, 0.98rem);
+    line-height: 1.5;
+  }
+
+  .Review-type-text-intro {
+    font-size: clamp(0.98rem, 2.9vw, 1.12rem);
+    line-height: 1.7;
+  }
+
+  .Review-form {
+    padding: 1.25rem;
+    border-radius: 18px;
+    margin-bottom: 1.5rem;
+  }
+
+  .Review-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .Review-radio-group {
+    gap: 0.7rem;
+  }
+
+  .Review-radio-option {
+    width: 100%;
+    justify-content: flex-start;
+    border-radius: 14px;
+  }
+
+  .Review-footer-note,
+  .Review-end-content {
+    padding: 1.1rem 1rem;
+    border-radius: 18px;
+  }
+
+  .review-paragraph,
+  .review-note,
+  .review-close-quote {
+    font-size: clamp(0.94rem, 2.4vw, 1.05rem);
+    line-height: 1.75;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .Review-Heading {
+    min-height: 80px;
+    padding: 1.2rem 0.75rem 0.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .heading-text {
+    font-size: clamp(1rem, 6vw, 1.55rem);
+    padding: 0.2rem 0.35rem;
+  }
+
+  .Review-subheading {
+    padding: 0 0.75rem;
+    margin-bottom: 1.1rem;
+  }
+
+  .quote-text {
+    font-size: clamp(0.85rem, 4vw, 1rem);
+    line-height: 1.55;
+  }
+
+  .Review-Content {
+    padding: 1rem 0.85rem 2rem;
+  }
+
+  .Review-title {
+    font-size: clamp(1rem, 5.5vw, 1.45rem);
+  }
+
+  .Review-types-heading {
+    margin-bottom: 1.1rem;
+  }
+
+  .Review-types-content {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .Review-type-item {
+    min-height: auto;
+    padding: 0.85rem 0.9rem;
+    border-radius: 12px;
+  }
+
+  .Review-type-item-intro {
+    padding: 0.95rem 1rem;
+  }
+
+  .Review-type-text {
+    font-size: clamp(0.9rem, 4vw, 1rem);
+    line-height: 1.55;
+  }
+
+  .Review-type-text-intro {
+    font-size: clamp(0.92rem, 4.1vw, 1.04rem);
+    line-height: 1.65;
+  }
+
+  .Review-form {
+    padding: 1rem 0.9rem;
+    border-radius: 16px;
+    margin-bottom: 1.25rem;
+  }
+
+  .Review-form-title,
+  .Review-footer-title,
+  .Review-end-title {
+    font-size: clamp(1.02rem, 5vw, 1.35rem);
+  }
+
+  .Review-form-element {
+    gap: 1rem;
+  }
+
+  .Review-label {
+    font-size: 0.95rem;
+  }
+
+  .Review-input,
+  .Review-textarea,
+  .Review-custom-select-trigger {
+    padding: 0.82rem 0.9rem;
+    font-size: 0.95rem;
+    border-radius: 12px;
+  }
+
+  .Review-textarea {
+    min-height: 140px;
+  }
+
+  .Review-radio-group {
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+
+  .Review-radio-option {
+    width: 100%;
+    padding: 0.75rem 0.85rem;
+  }
+
+  .Review-radio-option span {
+    font-size: 0.93rem;
+  }
+
+  .Review-message {
+    font-size: 0.92rem;
+    padding: 0.85rem 0.9rem;
+  }
+
+  .Review-submit-button {
+    width: 100%;
+    min-width: 0;
+    padding: 0.9rem 1rem;
+    font-size: 0.98rem;
+  }
+
+  .Review-footer-note,
+  .Review-end-content {
+    padding: 0.95rem 0.9rem;
+    border-radius: 16px;
+  }
+
+  .review-paragraph,
+  .review-note,
+  .review-close-quote {
+    font-size: clamp(0.9rem, 4vw, 0.98rem);
+    line-height: 1.68;
+  }
+
+  .review-close-quote {
+    margin-top: 1.5rem;
+  }
+}

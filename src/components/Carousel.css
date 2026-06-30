@@ -1,0 +1,237 @@
+/* ─── Design Tokens ──────────────────────────────────────────── */
+:root {
+  --outer-r: 24px;
+  --p-distance: 12px;
+  --inner-r: calc(var(--outer-r) - var(--p-distance));
+  --border: 1px solid #3a3a4a;
+  --bg-card: #1B1722;
+  --bg-container: #120f1a;
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.6);
+  --indicator-active: #ffffff;
+  --indicator-inactive: #444455;
+  --gap: 16px;
+}
+
+/* ─── Container ──────────────────────────────────────────────── */
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  border: var(--border);
+  border-radius: var(--outer-r);
+  padding: 10px 16px;
+  background-color: var(--bg-container);
+  box-sizing: border-box;
+  user-select: none;
+  width: 100%;
+  max-width: 100%;
+}
+
+.carousel-container.round {
+  border: var(--border);
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ─── Track ──────────────────────────────────────────────────── */
+.carousel-track {
+  display: flex;
+  will-change: transform;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* ─── Item ───────────────────────────────────────────────────── */
+.carousel-item {
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  border: var(--border);
+  border-radius: var(--inner-r);
+  background-color: var(--bg-card);
+  overflow: hidden;
+  cursor: grab;
+  box-sizing: border-box;
+  min-height: 240px;
+  width: 100% !important;
+  min-width: 100% !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  transition: box-shadow 0.2s ease;
+}
+
+.carousel-item:active {
+  cursor: grabbing;
+}
+
+.carousel-item:hover {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+/* Round variant */
+.carousel-item.round {
+  background-color: var(--bg-card);
+  border: var(--border);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* ─── Item Header ────────────────────────────────────────────── */
+.carousel-item-header {
+  width: 100%;
+  padding: 8px 20px 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+
+.carousel-item-header.round {
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+}
+
+/* Icon container */
+.carousel-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-primary);
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.carousel-icon-container:empty {
+  display: none;
+}
+
+/* ─── Item Content ───────────────────────────────────────────── */
+.carousel-item-content {
+  padding: 16px 20px 20px;
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+  overflow: hidden;
+}
+
+.carousel-item-title {
+  margin: 0;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 1.2;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.carousel-item-description {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+/* ─── Review-Specific Content ────────────────────────────────── */
+.carousel-review-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  flex: 1;
+  overflow: hidden;
+}
+
+.carousel-review-text {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-primary);
+  font-style: italic;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  /* Standard property for compatibility */
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+}
+
+.carousel-review-aspect,
+.carousel-review-category {
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--text-secondary);
+}
+
+.aspect-label,
+.category-label {
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ─── Indicators ─────────────────────────────────────────────── */
+.carousel-indicators-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  box-sizing: border-box;
+}
+
+.carousel-indicators-container.round {
+  position: absolute;
+  z-index: 2;
+  bottom: 14%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  padding: 0;
+}
+
+.carousel-indicators {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+}
+
+.carousel-indicator {
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition:
+    background-color 150ms ease,
+    transform 150ms ease;
+  flex-shrink: 0;
+}
+
+.carousel-indicator.active {
+  background-color: var(--indicator-active);
+}
+
+.carousel-indicator.inactive {
+  background-color: var(--indicator-inactive);
+}
+
+.carousel-indicator:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+}

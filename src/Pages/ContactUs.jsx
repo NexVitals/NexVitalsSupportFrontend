@@ -2,11 +2,15 @@ import './ContactUs.css';
 import LightRays from '../components/LightRays.jsx';
 import SplitText from '../components/SplitText.jsx';
 import ChromaGrid from '../components/ChromaGrid.jsx';
+import founderImg from "../assets/F.jpeg";
+import cf1Img from "../assets/CF1.png";
+import cf2Img from "../assets/CF2.jpeg";
+import cf3Img from "../assets/CF3.jpeg";
 
 function ContactUs() {
   const items = [
     {
-      image: "src/assets/CF3.jpeg",
+      image: cf3Img,
       title: "K Kavya Sri",
       subtitle: "Co-Founder & COO",
       mail: "kotagirikavyasri1845@gmail.com",
@@ -15,7 +19,7 @@ function ContactUs() {
       linkedin: "https://www.linkedin.com/in/kotagiri-kavya-sri-56690b317/"
     },
     {
-      image: "src/assets/CF2.jpeg",
+      image: cf2Img,
       title: "K L Prasanna",
       subtitle: "Co-Founder & CPO",
       mail: "konduriprasanna22@gmail.com",
@@ -24,7 +28,7 @@ function ContactUs() {
       linkedin: "https://www.linkedin.com/in/lakshmi-prasanna-konduri-520931318/"
     },
     {
-      image: "src/assets/CF1.png",
+      image: cf1Img,
       title: "Y K Sai Srikar",
       subtitle: "Co-Founder & CTO",
       mail: "saisrikaryerraguntla@gmail.com",
@@ -33,7 +37,7 @@ function ContactUs() {
       linkedin: "https://www.linkedin.com/in/y-k-sai-srikar"
     },
     {
-      image: "src/assets/F.jpeg",
+      image: founderImg,
       title: "S V Raghavan",
       subtitle: "Founder & CEO",
       mail: "sreenivasanvenkataraghavan@gmail.com",

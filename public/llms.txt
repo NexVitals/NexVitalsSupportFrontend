@@ -1,0 +1,42 @@
+# NexVitals Support Portal - LLMs & AI Agents Guidance
+# Last Updated: January 2025
+
+User-Agent: *
+
+# Allow AI agents to crawl all content
+Allow: /
+
+# Core pages AI agents should prioritize
+Allow: /support
+Allow: /query
+Allow: /grievance
+Allow: /suggestions
+Allow: /reviews
+Allow: /assistance
+
+# Disallow sensitive data
+Disallow: /admin
+Disallow: /private
+Disallow: /api/auth
+Disallow: /api/private
+Disallow: /*.json$
+Disallow: /user-data
+Disallow: /personal-info
+
+# Preferred access rules
+Preferred-URL: https://support.nexvitals.in/
+Request-Rate: 1 request per second
+
+# Company information
+About: https://support.nexvitals.in/about
+Contact: https://support.nexvitals.in/contact
+Crawl-Delay: 1
+
+# Additional pages for AI agents
+Allow: /faq
+Allow: /assistance
+Allow: /contact
+
+# Disallow crawling of form submission pages
+Disallow: /submit
+Disallow: /form-success

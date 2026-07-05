@@ -1,5 +1,61 @@
-User-agent: *
+# NexVitals Support Portal - Robots Configuration
+# Last Updated: January 2025
 
+# Default rules for all bots
+User-agent: *
 Allow: /
 
+# Crawl delay for general bots
+Crawl-delay: 1
+
+# Specific rules for AI agents (Google, Anthropic, etc.)
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0.5
+
+User-agent: Claude
+Allow: /
+Crawl-delay: 1
+
+User-agent: GPTBot
+Allow: /
+Crawl-delay: 1
+
+# Block bad actors
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+# Disallow sensitive paths
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/auth/
+Disallow: /api/private/
+Disallow: /user-data/
+Disallow: /*.json$
+Disallow: /form-success/
+Disallow: /checkout/
+
+# Allow public pages and resources
+Allow: /
+Allow: /support/
+Allow: /query/
+Allow: /grievance/
+Allow: /suggestions/
+Allow: /reviews/
+Allow: /assistance/
+Allow: /faq/
+Allow: /contact/
+Allow: /about/
+
+# XML Sitemap
 Sitemap: https://support.nexvitals.in/sitemap.xml
+
+# Additional sitemaps if you have them
+Sitemap: https://support.nexvitals.in/sitemap-pages.xml
+Sitemap: https://support.nexvitals.in/sitemap-posts.xml
